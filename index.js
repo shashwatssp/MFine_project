@@ -24,7 +24,7 @@ app.get('/', (req,res) => {
 
 
 
-// First API
+// First API ---------------------------------------------------------------------------------------
 app.post('/api/upload', async (req,res) => {
     try{
     const medicine = await Medicine.create(req.body);
@@ -35,7 +35,7 @@ app.post('/api/upload', async (req,res) => {
 });
 
 
-// Second API
+// Second API ---------------------------------------------------------------------------------------
 app.get('/api/search', async (req,res) => {
     try{
         var medicine_name = req.body.query;  
@@ -50,7 +50,9 @@ app.get('/api/search', async (req,res) => {
     }
 });
 
-    // Third API 
+
+
+// Third API ---------------------------------------------------------------------------------------
     const openai = new OpenAI({
         apiKey: "WILL-NOT-REVEAL"
     })
@@ -60,7 +62,7 @@ app.get('/api/search', async (req,res) => {
             var medicine_name = req.body.query;
             const response = await openai.chat.completions.create({
                 model: 'gpt-3.5-turbo',
-                messages: [{ role: 'system', content: 'You have to tell me in brief about the medicine name whih I am going to enter.' }, { role: 'user', content: medicine_name }],
+                messages: [{ role: 'system', content: 'You have to tell me in brief about the medicine which I am going to enter.' }, { role: 'user', content: medicine_name }],
                 max_tokens:100,
             });
     

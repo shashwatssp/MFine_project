@@ -1,6 +1,6 @@
 # Problem Statement
-Build a small backend service using JavaScript, NodeJS, Express JS & MongoDB
-It should constitute of 3 APIs.
+Build a small backend service using JavaScript, NodeJS, Express JS & MongoDB.
+It should constitute of 3 APIs:
 
 First API : Accepts medicine name and composition
 Second API : Allows Partial Search
